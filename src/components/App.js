@@ -1,13 +1,17 @@
 import React from "react";
 import Header from "./Header";
 import CotestPreview from "./ContestPreview";
+import data from "../testData.json";
 
 class App extends React.Component {
   state = {
     pageHeader: "Naming Contests!",
+    contests: [],
   };
   componentDidMount() {
-    // timers, listeners
+    this.setState({
+      contests: data.contests,
+    });
   }
   componentWillUnmount() {
     // clean timers, listeners
@@ -18,8 +22,8 @@ class App extends React.Component {
       <div className="App">
         <Header message={this.state.pageHeader} />
         <div>
-          {this.props.contests.map((contest) => (
-            <CotestPreview {...contest} />
+          {this.state.contests.map((contest) => (
+            <CotestPreview key={contest.id} {...contest} />
           ))}
         </div>
       </div>
