@@ -12,3 +12,7 @@
 .contest-name {
   padding: 0.5rem;
 }
+
+.link {
+  cursor: pointer;
+}
