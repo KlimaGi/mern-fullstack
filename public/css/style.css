@@ -16,3 +16,8 @@
 .link {
   cursor: pointer;
 }
+
+.home-link {
+  margin-top: 1rem;
+  color: #5c5cb8;
+}
